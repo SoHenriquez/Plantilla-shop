@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductsModule } from './products/products.module';
+import { CommonModule } from './common/common.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -16,6 +17,7 @@ import { ProductsModule } from './products/products.module';
       synchronize: true //sincroniza automaticamente un cambio en la db. no util en producción
     }),
     ProductsModule,
+    CommonModule,
   ],
 })
 export class AppModule {}
