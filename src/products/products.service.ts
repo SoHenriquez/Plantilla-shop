@@ -68,7 +68,7 @@ export class ProductsService {
     });
     if (!product) throw new NotFoundException(`Product with id ${id} not found`);
 
-    try{
+    try{    //Comprobamos duplicado
       await this.productRepository.save(product);
       return product;
     } catch (error) {
